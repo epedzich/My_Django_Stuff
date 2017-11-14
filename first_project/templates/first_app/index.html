@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Django Level Two</title>
+	<link rel = "stylesheet" , href = "{% static 'css/mystyle.css' %}"/>
+</head>
+<body>
+
+<h1>Hi this is a jpg picture</h1>
+<h2>Here are your access records!</h2>
+
+<div class = "djangtwo">
+	{% if access_records %}
+	<table>
+		<thead>
+			<th>Site Name</th>
+			<th>Date Accessed</th>
+		</thead>
+
+		{%for acc in access_records%}
+		<tr>
+			<td>{{acc.name}}</td>
+			<td>{{acc.date}}</td>
+		</tr>
+		{%endfor%}
+	</table>
+	{%else%}
+		<p>NO ACCESS RECORDS FOUND!</p>
+	{%endif%}
+</div>
+
+<img src = "{% static 'images/18815286_1974444336121357_3071649490025677499_o.jpg'%}">
+
+</body>
+</html>
