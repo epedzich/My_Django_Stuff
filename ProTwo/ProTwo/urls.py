@@ -20,7 +20,6 @@ from appTwo import views
 
 urlpatterns = [
     url(r'^$',views.index,name='index'),
-    url(r'^help/',include('appTwo.urls')),
     url(r'^users/',include('appTwo.urls')),
     url(r'^admin/', admin.site.urls),
 ]

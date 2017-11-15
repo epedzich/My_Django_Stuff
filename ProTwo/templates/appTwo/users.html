@@ -4,31 +4,42 @@
 <head>
 	<meta charset = "UTF-8">
 	<title>Users</title>
-	<!--<link rel = "stylesheet" , href = "{% static 'css/mystyle.css' %}"/>-->
+	<link rel = "stylesheet" , href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</link>
+
 </head>
 <body>
 
 
-<h2>Here are your users!</h2>
+<div class="container">
+	<h2>Please sign up here!</h2>
+	<form method="POST">
+		{{form.as_p}}
+		{%csrf_token%}
+		<input type="submit" class="btn btn-primary" value="Submit!">
+	</form>
 
-<div class = "djangtwo">
-	{% if access_users %}
-	<ol>
-		{%for user in access_users%}
-		<li>User info:</li>
-		<ul>
-			<li>First Name: {{user.first_name}}</li>
-			<li>Last Name: {{user.last_name}}</li>
-			<li>Email: {{user.user_email}}</li>
-		</ul>
-		{%endfor%}
-	</ol>
-
-
-	{%else%}
-	<p>NO USERS FOUND!</p>
-	{%endif%}
 </div>
+
+
+
+<!--<div class = "djangtwo">-->
+	<!--{% if access_users %}-->
+	<!--<ol>-->
+		<!--{%for user in access_users%}-->
+		<!--<li>User info:</li>-->
+		<!--<ul>-->
+			<!--<li>First Name: {{user.first_name}}</li>-->
+			<!--<li>Last Name: {{user.last_name}}</li>-->
+			<!--<li>Email: {{user.user_email}}</li>-->
+		<!--</ul>-->
+		<!--{%endfor%}-->
+	<!--</ol>-->
+
+
+	<!--{%else%}-->
+	<!--<p>NO USERS FOUND!</p>-->
+	<!--{%endif%}-->
+<!--</div>-->
 
 </body>
 </html>
